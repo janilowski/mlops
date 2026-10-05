@@ -151,6 +151,8 @@ activemq-data/
 
 # Environments
 .env
+.env.*
+!.env.example
 .envrc
 .venv
 env/
@@ -158,6 +160,13 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Keep decrypted secrets and private keys out of Git.
+/secrets.yaml
+/secrets.decrypted.yaml
+*.key
+private_key.asc
+*.private.asc
 
 # Spyder project settings
 .spyderproject
