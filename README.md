@@ -1,20 +1,38 @@
-# mlops
+# MLOps course
 
-hello world
+- `lab01/`: Iris API, training, tests, and containers from the first lab.
+- `homework/lab01/`: separate uv project for the sentiment-analysis homework.
 
-## Local settings
+Each project has its own dependencies, lockfile, and virtual environment.
 
-Copy `config/.env.example` to `config/.env.dev`, `.env.test`, or `.env.prod`.
-Set `ENVIRONMENT` to match the filename and fill in `APP_NAME`.
+## Lab 1
 
-The loader expects a decrypted, local `secrets.yaml`:
+Restore dependencies and run the tests:
 
-```yaml
-secrets:
-  - MY_PRECIOUS: "replace-with-your-secret"
+```bash
+uv --directory lab01 sync --locked
+uv --directory lab01 run pytest
 ```
 
-Run `uv run main.py --environment dev`. The loader does not decrypt SOPS
-files. Keep encrypted backups separately; `secrets.yaml`, local `.env`
-files, and private keys are ignored. `.sops.yaml` and `public_key.asc`
-contain public encryption configuration only.
+Run the API from `lab01/` with `uv run uvicorn app:app --reload`, or run
+`podman compose up --build` there. Docker Compose is also supported.
+
+Local environment files and secrets stay inside `lab01/` and remain ignored.
+
+## Homework
+
+```bash
+uv --directory homework/lab01 sync --locked
+```
+
+The homework starts with an empty environment. Add its dependencies there;
+PyTorch and the sentiment models have not been downloaded yet.
+
+## Git hooks
+
+The shared hook configuration stays at the repository root. Install the
+runner independently of either project's environment:
+
+```bash
+uvx --from pre-commit==4.6.2 pre-commit install
+```

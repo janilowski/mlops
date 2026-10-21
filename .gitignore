@@ -162,8 +162,8 @@ env.bak/
 venv.bak/
 
 # Keep decrypted secrets and private keys out of Git.
-/secrets.yaml
-/secrets.decrypted.yaml
+secrets.yaml
+secrets.decrypted.yaml
 *.key
 private_key.asc
 *.private.asc
