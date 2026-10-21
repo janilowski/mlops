@@ -10,3 +10,12 @@ repos:
      hooks:
         - id: xenon
           args: ['--max-absolute=B', '--max-modules=B', '--max-average=A']
+   - repo: local
+     hooks:
+        - id: mypy-homework-lab01
+          name: mypy (homework lab01)
+          entry: uv run --project homework/lab01 --locked --only-group dev mypy
+          args: [--config-file=homework/lab01/pyproject.toml]
+          language: system
+          files: ^homework/lab01/.*\.py$
+          types: [python]

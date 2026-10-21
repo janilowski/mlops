@@ -2,10 +2,16 @@
 
 [Assignment](https://github.com/j-adamczyk/MLOps_course_AGH/blob/master/lab01/HOMEWORK.md)
 
-This is an independent uv project for the sentiment-analysis API. The Iris
-example remains in `../../lab01/`.
+## PyTorch
 
-Create or restore the environment with `uv sync --locked` from this directory.
-Add inference dependencies with `uv add` and development tools with `uv add --dev`.
+```bash
+uv run --locked python -c 'import torch; print(torch.__version__); print(torch.ones(2) + 1)'
+```
 
-No application, model, or third-party dependencies have been added yet.
+The version should include `+cpu` on Linux, and the tensor should contain `[2., 2.]`.
+
+## Type checking
+
+```bash
+uv run --locked --only-group dev mypy .
+```
