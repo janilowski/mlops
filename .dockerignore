@@ -1,0 +1,14 @@
+.git/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+tests/
+config/
+.env*
+secrets.yaml
+secrets.decrypted.yaml
+.sops.yaml
+*.asc
+*.key
