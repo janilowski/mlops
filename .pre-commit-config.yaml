@@ -14,7 +14,7 @@ repos:
      hooks:
         - id: mypy-homework-lab01
           name: mypy (homework lab01)
-          entry: uv run --project homework/lab01 --locked --only-group dev mypy
+          entry: uv run --project homework/lab01 --locked mypy
           args: [--config-file=homework/lab01/pyproject.toml]
           language: system
           files: ^homework/lab01/.*\.py$

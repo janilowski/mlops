@@ -13,5 +13,5 @@ The version should include `+cpu` on Linux, and the tensor should contain `[2., 
 ## Type checking
 
 ```bash
-uv run --locked --only-group dev mypy .
+uv run --locked mypy .
 ```
