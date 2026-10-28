@@ -14,6 +14,19 @@ uv run --locked uvicorn app:app --reload
 uv run --locked pytest
 ```
 
+## Podman
+
+```bash
+uv tool install podman-compose
+PODMAN_COMPOSE_PROVIDER=podman-compose podman compose up --build
+```
+
+Stop and remove the service:
+
+```bash
+PODMAN_COMPOSE_PROVIDER=podman-compose podman compose down
+```
+
 ## PyTorch
 
 ```bash
