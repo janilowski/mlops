@@ -2,6 +2,18 @@
 
 [Assignment](https://github.com/j-adamczyk/MLOps_course_AGH/blob/master/lab01/HOMEWORK.md)
 
+## Server
+
+```bash
+uv run --locked uvicorn app:app --reload
+```
+
+## Tests
+
+```bash
+uv run --locked pytest
+```
+
 ## PyTorch
 
 ```bash
