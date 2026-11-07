@@ -1,0 +1,20 @@
+[project]
+name = "mlops-lab03"
+version = "0.1.0"
+description = "Polars data processing"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "pandas>=3.1.1",
+    "polars>=2.1.0",
+    "pyarrow>=26.0.1",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "jupyterlab>=4.6.6",
+    "nbconvert>=7.17.2",
+    "nbformat>=5.11.1",
+]
