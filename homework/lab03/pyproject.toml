@@ -1,0 +1,18 @@
+[project]
+name = "mlops-homework-lab03"
+version = "0.1.0"
+description = "Daily NYC taxi demand features with Polars"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "polars>=2.1.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "jupyterlab>=4.6.6",
+    "nbconvert>=7.17.2",
+    "nbformat>=5.11.1",
+]
