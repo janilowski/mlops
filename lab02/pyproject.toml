@@ -1,0 +1,21 @@
+[project]
+name = "mlops-lab02"
+version = "0.1.0"
+description = "PostgreSQL, DuckDB, and file formats"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "duckdb>=1.4,<2",
+    "matplotlib",
+    "pandas",
+    "psycopg[binary]",
+    "pyarrow",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel",
+    "jupyterlab",
+    "nbformat>=5.11.1",
+    "podman-compose>=1.6.0",
+]

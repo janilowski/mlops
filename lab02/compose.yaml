@@ -1,0 +1,26 @@
+name: mlops-lab02
+
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: Containerfile
+    image: localhost/mlops-lab02-postgres:17-alpine
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "127.0.0.1:5432:5432"
+    shm_size: 128mb
+    mem_limit: 512m
+    cpus: 2
+    stop_signal: SIGINT
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-h", "127.0.0.1", "-U", "postgres", "-d", "postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:
